@@ -9,33 +9,34 @@ import sqlParser from 'prettier-plugin-sql';
 
 
 const CodeFormatter = () => {
-  const [codeInput, setCodeInput] = useState('');
-  const [formattedCode, setFormattedCode] = useState('');
-  const [language, setLanguage] = useState('babel');
+  // const [codeInput, setCodeInput] = useState('');
+  // const [formattedCode, setFormattedCode] = useState('');
+  // const [language, setLanguage] = useState('babel');
 
-  const handleFormat = () => {
-    try {
-      const plugins = {
-        babel: babelParser,
-        html: htmlParser,
-        css: cssParser,
-        sql: sqlParser,
-      };
+  // const handleFormat = () => {
+  //   try {
+  //     const plugins = {
+  //       babel: babelParser,
+  //       html: htmlParser,
+  //       css: cssParser,
+  //       sql: sqlParser,
+  //     };
 
-      const formatted = prettier.format(codeInput, {
-        parser: language,
-        plugins: [plugins[language]],
-        tabWidth: 2,
-      });
-      setFormattedCode(formatted);
-    } catch (error) {
-      setFormattedCode('Invalid code');
-    }
-  };
+  //     const formatted = prettier.format(codeInput, {
+  //       parser: language,
+  //       plugins: [plugins[language]],
+  //       tabWidth: 2,
+  //     });
+  //     setFormattedCode(formatted);
+  //   } catch (error) {
+  //     setFormattedCode('Invalid code');
+  //   }
+  // };
 
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-4">Code Formatter</h1>
+      WIP
+      {/* <h1 className="text-2xl font-bold mb-4">Code Formatter</h1>
       <select
         value={language}
         onChange={(e) => setLanguage(e.target.value)}
@@ -57,7 +58,7 @@ const CodeFormatter = () => {
         className="border p-2 w-full mb-4 text-black"
       />
       <button onClick={handleFormat} className="bg-blue-500 text-white px-4 py-2">Format Code</button>
-      <pre className="mt-4 bg-gray-100 p-4">{formattedCode}</pre>
+      <pre className="mt-4 bg-gray-100 p-4">{formattedCode}</pre> */}
     </div>
   );
 };

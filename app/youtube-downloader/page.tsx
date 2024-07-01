@@ -4,33 +4,34 @@ import { useState } from 'react';
 import ytdl from 'ytdl-core';
 
 const YouTubeDownloader = () => {
-  const [url, setUrl] = useState('');
-  const [error, setError] = useState('');
-  const [videoInfo, setVideoInfo] = useState(null);
+  // const [url, setUrl] = useState('');
+  // const [error, setError] = useState('');
+  // const [videoInfo, setVideoInfo] = useState(null);
 
-  const handleDownload = async () => {
-    if (ytdl.validateURL(url)) {
-      try {
-        const corsProxy = 'https://cors-anywhere.herokuapp.com/';
-        const response = await fetch(`${corsProxy}https://www.youtube.com/get_video_info?video_id=${ytdl.getURLVideoID(url)}`);
-        if (!response.ok) {
-          throw new Error('Failed to fetch video info.');
-        }
-        const info = await response.text();
-        const videoInfo = ytdl.parseURL(url); // Parse the response text to extract video info
-        setVideoInfo(videoInfo);
-        setError('');
-      } catch (err) {
-        setError('Failed to fetch video info.');
-      }
-    } else {
-      setError('Invalid YouTube URL.');
-    }
-  };
+  // const handleDownload = async () => {
+  //   if (ytdl.validateURL(url)) {
+  //     try {
+  //       const corsProxy = 'https://cors-anywhere.herokuapp.com/';
+  //       const response = await fetch(`${corsProxy}https://www.youtube.com/get_video_info?video_id=${ytdl.getURLVideoID(url)}`);
+  //       if (!response.ok) {
+  //         throw new Error('Failed to fetch video info.');
+  //       }
+  //       const info = await response.text();
+  //       const videoInfo = ytdl.parseURL(url); // Parse the response text to extract video info
+  //       setVideoInfo(videoInfo);
+  //       setError('');
+  //     } catch (err) {
+  //       setError('Failed to fetch video info.');
+  //     }
+  //   } else {
+  //     setError('Invalid YouTube URL.');
+  //   }
+  // };
 
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-4">YouTube Downloader</h1>
+      WIP
+      {/* <h1 className="text-2xl font-bold mb-4">YouTube Downloader</h1>
       <input
         type="text"
         placeholder="Enter YouTube URL"
@@ -45,7 +46,7 @@ const YouTubeDownloader = () => {
           <h2 className="text-xl font-bold">{videoInfo.videoDetails.title}</h2>
           <a href={ytdl.chooseFormat(videoInfo.formats, { quality: 'highest' }).url} download className="text-blue-500">Download Video</a>
         </div>
-      )}
+      )} */}
     </div>
   );
 };
