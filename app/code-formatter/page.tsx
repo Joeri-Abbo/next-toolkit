@@ -5,7 +5,6 @@ import prettier from 'prettier/standalone';
 import babelParser from 'prettier/parser-babel';
 import htmlParser from 'prettier/parser-html';
 import cssParser from 'prettier/parser-postcss';
-import phpParser from '@prettier/plugin-php/standalone';
 import sqlParser from 'prettier-plugin-sql';
 
 
@@ -20,7 +19,6 @@ const CodeFormatter = () => {
         babel: babelParser,
         html: htmlParser,
         css: cssParser,
-        php: phpParser,
         sql: sqlParser,
       };
 
