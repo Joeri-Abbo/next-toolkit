@@ -11,7 +11,7 @@
     "test:watch": "jest --watchAll"
   },
   "dependencies": {
-    "@babel/parser": "^7.24.8",
+    "@babel/parser": "^7.25.3",
     "@prettier/plugin-php": "^0.22.2",
     "next": "14.2.5",
     "prettier": "^3.3.3",
